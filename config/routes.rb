@@ -142,6 +142,11 @@ Rails.application.routes.draw do
                                              as: :accept_application
   get 'job_applications/:id'             => 'job_applications#show',
                                              as: :application
+  resources :resume do
+    member do
+      get :download
+    end
+  end
   # --------------------------------------------------------------------------
   
   # ---------------------------- Job Seekers ---------------------------------
