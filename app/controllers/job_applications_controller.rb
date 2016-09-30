@@ -25,5 +25,8 @@ class JobApplicationsController < ApplicationController
 			redirect_back_or_default
 		end
 	end
-  
+
+  def download_applicant_resume
+		send_file @resume.document.path, :type => 'application/pdf', :filename => @resume.permalink
+	end
 end
